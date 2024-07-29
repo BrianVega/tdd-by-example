@@ -1,5 +1,8 @@
 package guru.springframework;
 
+/**
+ * Created by jt on 10/10/18.
+ */
 public class Sum implements Expression {
     Money augmend;
     Money addmend;
@@ -9,9 +12,8 @@ public class Sum implements Expression {
         this.addmend = addmend;
     }
 
-    @Override
     public Money reduce(String to) {
         int amount = augmend.amount + addmend.amount;
-        return new Money(amount , to);
+        return new Money(amount, to);
     }
 }
