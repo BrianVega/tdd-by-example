@@ -34,8 +34,13 @@ public class Money implements Expression {
                 && Objects.equals(this.currency, money.currency);
     }
 
-    public Expression plus(Money added) {
-        return new Money(amount + added.amount, currency);
+    @Override
+    public Money reduce(String to) {
+        return this;
+    }
+
+    public Expression plus(Money addend) {
+        return new Sum(this, addend);
     }
 
     @Override
